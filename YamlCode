@@ -1,0 +1,14 @@
+---
+
+- name: Check connection and install Apache HTTP server
+  hosts: g1
+  become: true
+
+  tasks:
+    - name: Ping the remote host
+      ping:
+
+    - name: Install Apache HTTP server
+      package:
+        name: httpd
+        state: present
